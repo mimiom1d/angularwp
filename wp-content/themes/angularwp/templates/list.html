@@ -1,0 +1,37 @@
+<h1>{{page_title}}</h1>
+
+<pre><code>{{ posts | json }}</code></pre>
+
+<article ng-repeat="post in posts">
+    <h2>TEST {{post.title.rendered}}</h2>
+    <div ng-bind-html="post.excerpt.rendered | to_trusted"></div>
+    <div ng-if="post.acf">
+            <p>{{post.acf.fruits}}</p>
+    </div>
+    <div ng-if="!post.acf">
+            <p>Sorry, there was no acf</p>
+    </div>
+    <div ng-if="post.gcacf">
+            <p>{{post.gcacf.gc_name}}</p>
+            <p>{{post.gcacf.gc_age}}</p>
+            <p>{{post.gcacf.gc_title}}</p>
+    </div>
+    <div ng-if="!post.gcacf">
+            <p>Sorry, there was no gcacf</p>
+    </div>
+    <div ng-if="post.gc_name">
+            <p>{{post.gc_name}}</p>
+    </div>
+    <div ng-if="!post.gc_name">
+            <p>Sorry, there was not gc_name</p>
+    </div>
+    <div ng-if="post.test">aaaaaaa
+            <div ng-repeat="item in post.test">
+                        <p>{{item}}</p>
+            </div>
+    </div>
+    <div ng-if="!post.test">nonononono
+            <p>Sorry, there was no test</p>
+    </div>
+    <a ui-sref="detail({id: post.id})">Click to read more</a>
+</article>

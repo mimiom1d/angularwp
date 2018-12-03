@@ -1,0 +1,10 @@
+.DS_Store
+# wp-content/themes/getcoins/css/*
+# wp-content/themes/getcoins/js/build/*
+# wp-content/themes/getcoins/js/gc-script-frontpage.js
+# wp-content/themes/getcoins/js/gc-script.js
+wp-content/themes/getcoins/node_modules/*
+wp-content/themes/getcoins/**/temp/*
+node_modules/
+*/package-lock.json
+wp-config.php
